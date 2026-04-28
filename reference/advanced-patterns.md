@@ -157,7 +157,7 @@ fi
 ---
 name: Sprint status
 type: project
-last_verified: 2026-04-01
+last_reviewed: 2026-04-01
 ttl_days: 14
 ---
 ```
@@ -178,11 +178,11 @@ for fname in sorted(os.listdir(memory_dir)):
     path = os.path.join(memory_dir, fname)
     with open(path) as f:
         head = f.read(1024)
-    verified = re.search(r'last_verified:\s*(\d{4}-\d{2}-\d{2})', head)
+    reviewed = re.search(r'last_reviewed:\s*(\d{4}-\d{2}-\d{2})', head)
     ttl = re.search(r'ttl_days:\s*(\d+)', head)
-    if not verified or not ttl:
+    if not reviewed or not ttl:
         continue
-    days_old = (today - datetime.strptime(verified.group(1), "%Y-%m-%d").date()).days
+    days_old = (today - datetime.strptime(reviewed.group(1), "%Y-%m-%d").date()).days
     if days_old > int(ttl.group(1)):
         stale += 1
         print(f"  Stale: {fname} ({days_old}d old, TTL {ttl.group(1)}d)")

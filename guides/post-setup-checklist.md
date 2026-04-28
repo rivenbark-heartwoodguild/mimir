@@ -62,7 +62,7 @@ You've built the memory system. Now make sure it actually works. This checklist 
 
 - [ ] **Measure index size** — Run `wc -l` on MEMORY.md. If it's crept past 200 lines, consolidate. Combine related memories into single files. Move reference material to an on-demand section.
 
-- [ ] **Run staleness check** — If using TTL frontmatter (`last_verified` + `ttl_days`), scan for overdue files. A simple script that compares dates can flag these automatically at session start. See [Advanced Patterns](../reference/advanced-patterns.md#staleness-detection) for the 42-line implementation.
+- [ ] **Run staleness check** — If using TTL frontmatter (`last_reviewed` + `ttl_days`), scan for overdue files. A simple script that compares dates can flag these automatically at session start. See [Advanced Patterns](../reference/advanced-patterns.md#staleness-detection) for the 42-line implementation.
 
 - [ ] **Check for overlapping memories** — Two files that say the same thing in different words waste context. Look for memories with >50% sentence overlap and merge them. See [Memory Maintenance](../reference/advanced-patterns.md#memory-maintenance).
 

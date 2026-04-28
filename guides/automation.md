@@ -52,7 +52,7 @@ if [ -d "$MEMORY_DIR" ]; then
   STALE=0
   for file in "$MEMORY_DIR"/*.md; do
     [ "$file" = "$MEMORY_DIR/MEMORY.md" ] && continue
-    VERIFIED=$(grep -m1 'last_verified:' "$file" 2>/dev/null | awk '{print $2}')
+    VERIFIED=$(grep -m1 'last_reviewed:' "$file" 2>/dev/null | awk '{print $2}')
     TTL=$(grep -m1 'ttl_days:' "$file" 2>/dev/null | awk '{print $2}')
     if [ -n "$VERIFIED" ] && [ -n "$TTL" ]; then
       VERIFIED_TS=$(date -j -f "%Y-%m-%d" "$VERIFIED" +%s 2>/dev/null || date -d "$VERIFIED" +%s 2>/dev/null)
