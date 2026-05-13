@@ -100,7 +100,7 @@ This is the stack GuildHouse was built on. Your tools will differ -- what matter
 
 | Capability | Our Tool | What It Does |
 |------------|----------|-------------|
-| **Structured retrieval** | [MemPalace](https://github.com/milla-jovovich/mempalace/tree/main) (KG via MCP) | 559+ triples with temporal validity. `kg_query(entity, predicate, current_only)` returns exact facts in 15-67 tokens. |
+| **Structured retrieval** | [MemPalace](https://github.com/milla-jovovich/mempalace/tree/main) (KG via MCP) | 2,730+ triples with temporal validity. `kg_query(entity, predicate, current_only)` returns exact facts in 15-67 tokens. |
 | **Semantic retrieval** | [QMD](https://github.com/tobilu/qmd) (vector search via MCP) | 6,471 vectors across 7 collections. `query(lex+vec+hyde)` returns ranked passages by meaning. Scores 0.88-0.93 on narrative queries. |
 | **File retrieval** | Claude Code auto-memory (Grep/Read) | Markdown files at `~/.claude/projects/<path>/memory/`. Zero latency, zero tokens to query, always current. |
 | **Classifier** | The routing table in `CLAUDE.md` | Claude reads the 5 rules and pattern-matches each query. No separate model or code. |
